@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "491660955455",
+    "project_id": "clases-adra",
+    "storage_bucket": "clases-adra.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:491660955455:android:ffaa7375cad82c53f14d8a",
+        "android_client_info": {
+          "package_name": "com.example.app_adra_forms"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "491660955455-p0a9kdr3n1gevl4kamptqtjnbc9r6938.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDw4UbIu70E_lX4v8rfMaO-kJg5cm4uvg0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "491660955455-p0a9kdr3n1gevl4kamptqtjnbc9r6938.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
