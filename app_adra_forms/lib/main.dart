@@ -1,5 +1,6 @@
 import 'package:app_adra_forms/firebase_options.dart';
-import 'package:app_adra_forms/modules/home/screens/home_screen.dart';
+import 'package:app_adra_forms/modules/auth/controller/auth_controller.dart';
+import 'package:app_adra_forms/modules/auth/screens/splash_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -9,6 +10,8 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+
+  Get.put<AuthController>(AuthController());
 
   runApp(const MyApp());
 }
@@ -20,7 +23,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const GetMaterialApp(
       title: 'Material App',
-      home: HomeScreen(),
+      home: SplashScreen(),
     );
   }
 }
