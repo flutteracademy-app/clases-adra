@@ -29,7 +29,7 @@ class AuthController extends GetxController {
     if (firebaseUser == null) {
       Get.offAll(EmailSignInUi());
     } else {
-      Get.offAll(const HomeScreen());
+      Get.offAll(HomeScreen());
     }
   }
 
