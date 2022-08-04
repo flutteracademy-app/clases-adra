@@ -11,8 +11,8 @@ class HomeScreen extends StatelessWidget {
       floatingActionButton: FloatingActionButton(onPressed: () {
         authController.signOut();
       }),
-      body: const Center(
-        child: Text("Hola Mundo"),
+      body: Center(
+        child: Text(authController.firebaseUser.value!.uid.toString()),
       ),
     );
   }

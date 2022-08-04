@@ -18,9 +18,9 @@ class FormInputFieldWithIcon extends StatelessWidget {
       required this.iconPrefix,
       required this.labelText,
       required this.validator,
-      required this.keyboardType,
-      required this.obscureText,
-      required this.minLines,
+      this.keyboardType = TextInputType.text,
+      this.obscureText = false,
+      this.minLines = 1,
       this.maxLines,
       required this.onChanged,
       required this.onSaved})
