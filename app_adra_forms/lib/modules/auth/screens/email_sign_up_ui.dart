@@ -85,7 +85,7 @@ class EmailSignUpUI extends StatelessWidget {
                       ),
                       LabelButton(
                         labelText: '¿Tienes una cuenta? Iniciar sesión.',
-                        onPressed: () => Get.to(EmailSignInUi()),
+                        onPressed: () => Get.off(EmailSignInUi()),
                       ),
                     ],
                   ),

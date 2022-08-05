@@ -81,7 +81,7 @@ class EmailSignInUi extends StatelessWidget {
                   const FormVerticalSpacing(),
                   LabelButton(
                     labelText: 'Crear una cuenta',
-                    onPressed: () => Get.to(EmailSignUpUI()),
+                    onPressed: () => Get.off(EmailSignUpUI()),
                   ),
                 ],
               ),
