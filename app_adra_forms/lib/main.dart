@@ -1,6 +1,7 @@
 import 'package:app_adra_forms/firebase_options.dart';
 import 'package:app_adra_forms/modules/auth/controller/auth_controller.dart';
 import 'package:app_adra_forms/modules/auth/screens/splash_screen.dart';
+import 'package:app_adra_forms/modules/generate_dynamic_forms/controller/form_controller.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -12,6 +13,7 @@ void main() async {
   );
 
   Get.put<AuthController>(AuthController());
+  Get.put<FormController>(FormController());
 
   runApp(const MyApp());
 }
