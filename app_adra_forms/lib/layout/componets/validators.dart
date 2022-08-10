@@ -11,6 +11,16 @@ class Validator {
     }
   }
 
+  String? name(String? value) {
+    String pattern = r'^.{6,}$';
+    RegExp regex = RegExp(pattern);
+    if (!regex.hasMatch(value!)) {
+      return 'Name invalid';
+    } else {
+      return null;
+    }
+  }
+
   String? password(String? value) {
     String pattern = r'^.{6,}$';
     RegExp regex = RegExp(pattern);

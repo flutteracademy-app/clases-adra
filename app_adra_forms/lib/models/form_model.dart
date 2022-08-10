@@ -3,6 +3,8 @@ import 'package:json_annotation/json_annotation.dart';
 part 'form_model.g.dart';
 
 @JsonSerializable(anyMap: true, explicitToJson: true)
+enum TypeForm { emptyForm, textForm, otroForm }
+
 class FormModel {
   String? uid;
   final String? nameUser;
