@@ -55,7 +55,7 @@ class CreateTextFormScreen extends StatelessWidget {
                             name: formController.nameFormController.text,
                           );
 
-                          await DatabaseForms().createNewForm(
+                          DatabaseForms().createNewForm(
                             model: formModel,
                             user: authController.firebaseUser.value!,
                             form: TypeForm.textForm,
