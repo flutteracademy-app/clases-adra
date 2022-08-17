@@ -1,6 +1,7 @@
 import 'package:app_adra_forms/layout/componets/validators.dart';
 import 'package:app_adra_forms/layout/widgets/buttons/primary_button.dart';
 import 'package:app_adra_forms/models/form_model.dart';
+import 'package:app_adra_forms/models/type_form_model.dart';
 import 'package:app_adra_forms/modules/auth/controller/auth_controller.dart';
 import 'package:app_adra_forms/modules/generate_dynamic_forms/controller/form_controller.dart';
 import 'package:app_adra_forms/services/firestore_service_forms.dart';
@@ -11,7 +12,9 @@ class CreateTextFormScreen extends StatelessWidget {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   final FormController formController = FormController.to;
   final AuthController authController = AuthController.to;
-  CreateTextFormScreen({Key? key}) : super(key: key);
+  final TypeFormModel typeFormModel;
+  CreateTextFormScreen({Key? key, required this.typeFormModel})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -29,19 +32,20 @@ class CreateTextFormScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  TextFormField(
-                    decoration: const InputDecoration(
-                      filled: true,
+                  if (typeFormModel.title == true)
+                    TextFormField(
+                      decoration: const InputDecoration(
+                        filled: true,
+                      ),
+                      controller: formController.nameFormController,
+                      onSaved: (value) =>
+                          formController.nameFormController.text == value,
+                      onChanged: (value) => null,
+                      keyboardType: TextInputType.name,
+                      maxLines: 1,
+                      minLines: 1,
+                      validator: Validator().name,
                     ),
-                    controller: formController.nameFormController,
-                    onSaved: (value) =>
-                        formController.nameFormController.text == value,
-                    onChanged: (value) => null,
-                    keyboardType: TextInputType.name,
-                    maxLines: 1,
-                    minLines: 1,
-                    validator: Validator().name,
-                  ),
                   const SizedBox(
                     height: 40,
                   ),
@@ -58,7 +62,7 @@ class CreateTextFormScreen extends StatelessWidget {
                           DatabaseForms().createNewForm(
                             model: formModel,
                             user: authController.firebaseUser.value!,
-                            form: TypeForm.textForm,
+                            typeForm: '',
                           );
 
                           formController.nameFormController.clear();
